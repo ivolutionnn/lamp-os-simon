@@ -10,7 +10,7 @@ const model = defineModel<Settings>({ default: { lamp: { name: '' } } })
       <Critter />
     </div>
     <div class="text">
-      <div class="preamble">Hello my name is:</div>
+      <div class="preamble">Hello, my name is:</div>
       <div class="lampname">{{ model.lamp?.name }}</div>
     </div>
   </div>

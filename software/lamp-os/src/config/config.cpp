@@ -68,6 +68,10 @@ Config::Config(Preferences* inPrefs) {
   }
 
   JsonObject shadeNode = doc["shade"];
+  shade.px = shadeNode["px"] | 38;
+  if (shade.px > 48) {
+    shade.px = 48;
+  }
   JsonArray shadeColors = shadeNode["colors"];
   if (shadeColors.size()) {
     shade.colors.clear();

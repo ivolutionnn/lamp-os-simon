@@ -39,6 +39,7 @@ const maxReconnectAttempts = 60
 const reconnectInterval = 2500
 const websocketDebounceInterval = 10
 const maxLedsBase = 50
+const maxLedsShade = 48
 
 // state ======================
 
@@ -521,6 +522,18 @@ onUnmounted(() => {
                 </FormField>
               </div>
             </div>
+
+            <h1 class="green">Lamp Shade LED Profile</h1>
+            <FormField label="Shade LED Count" id="shadeLeds">
+              <NumberInput
+                :model-value="settings.shade?.px || 38"
+                @update:model-value="(value) => updateSetting('shade.px', value)"
+                :min="5"
+                :max="maxLedsShade"
+                placeholder="Number of LEDs"
+                :disabled="disabled"
+              />
+            </FormField>
 
             <h1 class="green">Lamp Base LED Profile</h1>
             <FormField label="Base LED Count" id="baseLeds">
